@@ -7,17 +7,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Career Assessment - CareerCompass</title>
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #7E57C2;
+            --accent: #4DD0E1;
+            --background: #F5F5F5;
+            --text: #333333;
+        }
+        body {
+            background-color: var(--background);
+            color: var(--text);
+        }
+        .bg-primary {
+            background-color: var(--primary);
+        }
+        .bg-accent {
+            background-color: var(--accent);
+        }
+        .text-primary {
+            color: var(--primary);
+        }
+        .text-accent {
+            color: var(--accent);
+        }
+        .hover\:bg-primary-dark:hover {
+            background-color: #6A45B0;
+        }
+        .border-primary {
+            border-color: var(--primary);
+        }
+        .focus\:border-accent:focus {
+            border-color: var(--accent);
+        }
+        .hover\:bg-accent\/10:hover {
+            background-color: rgba(77, 208, 225, 0.1);
+        }
+    </style>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="assessment.css">
 </head>
 
 <body>
-    <div class="min-h-screen bg-gradient-to-br from-purple-900 via-purple-800 to-black text-white">
+    <div class="min-h-screen bg-background">
         <header class="container mx-auto px-4 py-4 md:py-8">
             <nav class="flex justify-between items-center">
-                <h1 class="text-xl md:text-2xl font-bold">CareerCompass</h1>
+                <h1 class="text-xl md:text-2xl font-bold text-primary">CareerCompass</h1>
                 <div class="flex items-center space-x-4">
-                    <a href="index.html" class="text-purple-200 hover:text-white transition">Back to Home</a>
+                    <a href="index.html" class="text-text hover:text-primary transition">Back to Home</a>
                 </div>
             </nav>
         </header>
@@ -25,23 +61,23 @@
         <main class="container mx-auto px-4 py-8">
             <div class="max-w-3xl mx-auto">
                 <div class="text-center mb-8">
-                    <h2 class="text-2xl md:text-3xl font-bold mb-4">Career Assessment</h2>
-                    <p class="text-purple-200">Help us understand your interests and preferences to guide you better</p>
+                    <h2 class="text-2xl md:text-3xl font-bold mb-4 text-primary">Career Assessment</h2>
+                    <p class="text-text">Help us understand your interests and preferences to guide you better</p>
                 </div>
 
-                <form id="assessmentForm" class="space-y-8 bg-purple-900/30 p-6 md:p-8 rounded-xl backdrop-blur-sm">
+                <form id="assessmentForm" class="space-y-8 bg-white shadow-lg p-6 md:p-8 rounded-xl">
                     <!-- Academic Interests -->
                     <section class="space-y-4">
-                        <h3 class="text-xl font-semibold text-purple-200">Academic Interests</h3>
+                        <h3 class="text-xl font-semibold text-primary">Academic Interests</h3>
                         <div>
-                            <label class="block text-sm font-medium mb-2">Subjects/Fields You Enjoy Most</label>
+                            <label class="block text-sm font-medium mb-2 text-text">Subjects/Fields You Enjoy Most</label>
                             <div id="subjectsContainer" class="space-y-2">
                                 <div class="flex gap-2">
                                     <input type="text"
-                                        class="flex-1 px-4 py-2 rounded-lg bg-purple-800/50 border border-purple-600 focus:outline-none focus:border-purple-400 text-purple-900"
+                                        class="flex-1 px-4 py-2 rounded-lg bg-background border border-primary focus:outline-none focus:border-accent"
                                         placeholder="Enter a subject (e.g., biology, coding)">
                                     <button type="button"
-                                        class="add-subject px-4 py-2 bg-purple-600 rounded-lg hover:bg-purple-700 transition">+</button>
+                                        class="add-subject px-4 py-2 bg-accent text-white rounded-lg hover:bg-accent/90 transition">+</button>
                                 </div>
                             </div>
                         </div>
@@ -49,41 +85,41 @@
 
                     <!-- Skills Assessment -->
                     <section class="space-y-4">
-                        <h3 class="text-xl font-semibold text-purple-200">Skills Assessment</h3>
+                        <h3 class="text-xl font-semibold text-primary">Skills Assessment</h3>
                         <div class="grid md:grid-cols-2 gap-4">
                             <div class="skill-rating">
-                                <label class="block text-sm font-medium mb-2">Teamwork</label>
-                                <div class="flex space-x-2">
-                                    <input type="range" min="1" max="5" value="3" class="skill-slider">
-                                    <span class="skill-value">3</span>
+                                <label class="block text-sm font-medium mb-2 text-text">Teamwork</label>
+                                <div class="flex space-x-2 items-center">
+                                    <input type="range" min="1" max="5" value="3" class="skill-slider accent-primary">
+                                    <span class="skill-value text-text">3</span>
                                 </div>
                             </div>
                             <div class="skill-rating">
-                                <label class="block text-sm font-medium mb-2">Problem-solving</label>
-                                <div class="flex space-x-2">
-                                    <input type="range" min="1" max="5" value="3" class="skill-slider">
-                                    <span class="skill-value">3</span>
+                                <label class="block text-sm font-medium mb-2 text-text">Problem-solving</label>
+                                <div class="flex space-x-2 items-center">
+                                    <input type="range" min="1" max="5" value="3" class="skill-slider accent-primary">
+                                    <span class="skill-value text-text">3</span>
                                 </div>
                             </div>
                             <div class="skill-rating">
-                                <label class="block text-sm font-medium mb-2">Creativity</label>
-                                <div class="flex space-x-2">
-                                    <input type="range" min="1" max="5" value="3" class="skill-slider">
-                                    <span class="skill-value">3</span>
+                                <label class="block text-sm font-medium mb-2 text-text">Creativity</label>
+                                <div class="flex space-x-2 items-center">
+                                    <input type="range" min="1" max="5" value="3" class="skill-slider accent-primary">
+                                    <span class="skill-value text-text">3</span>
                                 </div>
                             </div>
                             <div class="skill-rating">
-                                <label class="block text-sm font-medium mb-2">Technical Skills</label>
-                                <div class="flex space-x-2">
-                                    <input type="range" min="1" max="5" value="3" class="skill-slider">
-                                    <span class="skill-value">3</span>
+                                <label class="block text-sm font-medium mb-2 text-text">Technical Skills</label>
+                                <div class="flex space-x-2 items-center">
+                                    <input type="range" min="1" max="5" value="3" class="skill-slider accent-primary">
+                                    <span class="skill-value text-text">3</span>
                                 </div>
                             </div>
                             <div class="skill-rating">
-                                <label class="block text-sm font-medium mb-2">Communication</label>
-                                <div class="flex space-x-2">
-                                    <input type="range" min="1" max="5" value="3" class="skill-slider">
-                                    <span class="skill-value">3</span>
+                                <label class="block text-sm font-medium mb-2 text-text">Communication</label>
+                                <div class="flex space-x-2 items-center">
+                                    <input type="range" min="1" max="5" value="3" class="skill-slider accent-primary">
+                                    <span class="skill-value text-text">3</span>
                                 </div>
                             </div>
                         </div>
@@ -91,48 +127,44 @@
 
                     <!-- Hobbies -->
                     <section class="space-y-4">
-                        <h3 class="text-xl font-semibold text-purple-200">Hobbies & Activities</h3>
+                        <h3 class="text-xl font-semibold text-primary">Hobbies & Activities</h3>
                         <div id="hobbiesContainer" class="space-y-2">
                             <div class="flex gap-2">
                                 <input type="text"
-                                    class="flex-1 px-4 py-2 rounded-lg bg-purple-800/50 border border-purple-600 focus:outline-none focus:border-purple-400 text-purple-900"
+                                    class="flex-1 px-4 py-2 rounded-lg bg-background border border-primary focus:outline-none focus:border-accent"
                                     placeholder="Enter a hobby (e.g., painting, sports)">
                                 <button type="button"
-                                    class="add-hobby px-4 py-2 bg-purple-600 rounded-lg hover:bg-purple-700 transition">+</button>
+                                    class="add-hobby px-4 py-2 bg-accent text-white rounded-lg hover:bg-accent/90 transition">+</button>
                             </div>
                         </div>
                     </section>
 
                     <!-- Work Environment -->
                     <section class="space-y-4">
-                        <h3 class="text-xl font-semibold text-purple-200">Work Environment Preferences</h3>
+                        <h3 class="text-xl font-semibold text-primary">Work Environment Preferences</h3>
                         <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
                             <label class="environment-option">
                                 <input type="radio" name="environment" value="indoor" class="sr-only">
-                                <div
-                                    class="p-4 bg-purple-800/50 rounded-lg cursor-pointer hover:bg-purple-700/50 transition">
-                                    <span class="block text-center">Indoor</span>
+                                <div class="p-4 bg-background border border-primary rounded-lg cursor-pointer hover:bg-accent/10 transition">
+                                    <span class="block text-center text-text">Indoor</span>
                                 </div>
                             </label>
                             <label class="environment-option">
                                 <input type="radio" name="environment" value="outdoor" class="sr-only">
-                                <div
-                                    class="p-4 bg-purple-800/50 rounded-lg cursor-pointer hover:bg-purple-700/50 transition">
-                                    <span class="block text-center">Outdoor</span>
+                                <div class="p-4 bg-background border border-primary rounded-lg cursor-pointer hover:bg-accent/10 transition">
+                                    <span class="block text-center text-text">Outdoor</span>
                                 </div>
                             </label>
                             <label class="environment-option">
                                 <input type="radio" name="environment" value="remote" class="sr-only">
-                                <div
-                                    class="p-4 bg-purple-800/50 rounded-lg cursor-pointer hover:bg-purple-700/50 transition">
-                                    <span class="block text-center">Remote</span>
+                                <div class="p-4 bg-background border border-primary rounded-lg cursor-pointer hover:bg-accent/10 transition">
+                                    <span class="block text-center text-text">Remote</span>
                                 </div>
                             </label>
                             <label class="environment-option">
                                 <input type="radio" name="environment" value="hybrid" class="sr-only">
-                                <div
-                                    class="p-4 bg-purple-800/50 rounded-lg cursor-pointer hover:bg-purple-700/50 transition">
-                                    <span class="block text-center">Hybrid</span>
+                                <div class="p-4 bg-background border border-primary rounded-lg cursor-pointer hover:bg-accent/10 transition">
+                                    <span class="block text-center text-text">Hybrid</span>
                                 </div>
                             </label>
                         </div>
@@ -140,63 +172,51 @@
 
                     <!-- Career Values -->
                     <section class="space-y-4">
-                        <h3 class="text-xl font-semibold text-purple-200">Career Values</h3>
+                        <h3 class="text-xl font-semibold text-primary">Career Values</h3>
                         <div id="careerValues" class="space-y-2">
                             <div class="value-item" draggable="true">
-                                <div class="p-4 bg-purple-800/50 rounded-lg cursor-move">
-                                    <span>Salary</span>
-                                </div>
+                                <div class="p-4 bg-background border border-primary rounded-lg cursor-move text-text hover:bg-accent/10">Salary</div>
                             </div>
                             <div class="value-item" draggable="true">
-                                <div class="p-4 bg-purple-800/50 rounded-lg cursor-move">
-                                    <span>Work-life Balance</span>
-                                </div>
+                                <div class="p-4 bg-background border border-primary rounded-lg cursor-move text-text hover:bg-accent/10">Work-life Balance</div>
                             </div>
                             <div class="value-item" draggable="true">
-                                <div class="p-4 bg-purple-800/50 rounded-lg cursor-move">
-                                    <span>Creativity</span>
-                                </div>
+                                <div class="p-4 bg-background border border-primary rounded-lg cursor-move text-text hover:bg-accent/10">Creativity</div>
                             </div>
                             <div class="value-item" draggable="true">
-                                <div class="p-4 bg-purple-800/50 rounded-lg cursor-move">
-                                    <span>Social Impact</span>
-                                </div>
+                                <div class="p-4 bg-background border border-primary rounded-lg cursor-move text-text hover:bg-accent/10">Social Impact</div>
                             </div>
                             <div class="value-item" draggable="true">
-                                <div class="p-4 bg-purple-800/50 rounded-lg cursor-move">
-                                    <span>Stability</span>
-                                </div>
+                                <div class="p-4 bg-background border border-primary rounded-lg cursor-move text-text hover:bg-accent/10">Stability</div>
                             </div>
                             <div class="value-item" draggable="true">
-                                <div class="p-4 bg-purple-800/50 rounded-lg cursor-move">
-                                    <span>Growth</span>
-                                </div>
+                                <div class="p-4 bg-background border border-primary rounded-lg cursor-move text-text hover:bg-accent/10">Growth</div>
                             </div>
                         </div>
-                        <p class="text-sm text-purple-200">Drag to reorder based on importance</p>
+                        <p class="text-sm text-text">Drag to reorder based on importance</p>
                     </section>
 
                     <!-- Role Models -->
                     <section class="space-y-4">
-                        <h3 class="text-xl font-semibold text-purple-200">Role Models</h3>
+                        <h3 class="text-xl font-semibold text-primary">Role Models</h3>
                         <textarea
-                            class="w-full px-4 py-2 rounded-lg bg-purple-800/50 border border-purple-600 focus:outline-none focus:border-purple-400 text-purple-900"
+                            class="w-full px-4 py-2 rounded-lg bg-background border border-primary focus:outline-none focus:border-accent text-text"
                             rows="3" placeholder="Describe professionals or careers you admire and why"></textarea>
                     </section>
 
                     <!-- Goals & Challenges -->
                     <section class="space-y-4">
-                        <h3 class="text-xl font-semibold text-purple-200">Goals & Challenges</h3>
+                        <h3 class="text-xl font-semibold text-primary">Goals & Challenges</h3>
                         <div>
-                            <label class="block text-sm font-medium mb-2">Long-Term Career Goal</label>
+                            <label class="block text-sm font-medium mb-2 text-text">Long-Term Career Goal</label>
                             <input type="text"
-                                class="w-full px-4 py-2 rounded-lg bg-purple-800/50 border border-purple-600 focus:outline-none focus:border-purple-400 text-purple-900"
+                                class="w-full px-4 py-2 rounded-lg bg-background border border-primary focus:outline-none focus:border-accent text-text"
                                 placeholder="Your ultimate career aspiration">
                         </div>
                         <div>
-                            <label class="block text-sm font-medium mb-2">Career Challenges</label>
+                            <label class="block text-sm font-medium mb-2 text-text">Career Challenges</label>
                             <select
-                                class="w-full px-4 py-2 rounded-lg bg-purple-800/50 border border-purple-600 focus:outline-none focus:border-purple-400 text-purple-900">
+                                class="w-full px-4 py-2 rounded-lg bg-background border border-primary focus:outline-none focus:border-accent text-text">
                                 <option value="">Select your biggest concern</option>
                                 <option value="availability">Job Availability</option>
                                 <option value="skills">Skill Gaps</option>
@@ -207,82 +227,10 @@
                         </div>
                     </section>
 
-                    <!-- Learning & Development -->
-                    <section class="space-y-4">
-                        <h3 class="text-xl font-semibold text-purple-200">Learning & Development</h3>
-                        <div>
-                            <label class="block text-sm font-medium mb-2">Preferred Learning Style</label>
-                            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                                <label class="learning-style-option">
-                                    <input type="radio" name="learning-style" value="hands-on" class="sr-only">
-                                    <div
-                                        class="p-4 bg-purple-800/50 rounded-lg cursor-pointer hover:bg-purple-700/50 transition">
-                                        <span class="block text-center">Hands-on</span>
-                                    </div>
-                                </label>
-                                <label class="learning-style-option">
-                                    <input type="radio" name="learning-style" value="theoretical" class="sr-only">
-                                    <div
-                                        class="p-4 bg-purple-800/50 rounded-lg cursor-pointer hover:bg-purple-700/50 transition">
-                                        <span class="block text-center">Theoretical</span>
-                                    </div>
-                                </label>
-                                <label class="learning-style-option">
-                                    <input type="radio" name="learning-style" value="mentorship" class="sr-only">
-                                    <div
-                                        class="p-4 bg-purple-800/50 rounded-lg cursor-pointer hover:bg-purple-700/50 transition">
-                                        <span class="block text-center">Mentorship</span>
-                                    </div>
-                                </label>
-                                <label class="learning-style-option">
-                                    <input type="radio" name="learning-style" value="self-paced" class="sr-only">
-                                    <div
-                                        class="p-4 bg-purple-800/50 rounded-lg cursor-pointer hover:bg-purple-700/50 transition">
-                                        <span class="block text-center">Self-paced</span>
-                                    </div>
-                                </label>
-                            </div>
-                        </div>
-                        <div>
-                            <label class="block text-sm font-medium mb-2">Tech Comfort Level</label>
-                            <div class="flex space-x-4">
-                                <label class="tech-level-option">
-                                    <input type="radio" name="tech-level" value="beginner" class="sr-only">
-                                    <div
-                                        class="p-4 bg-purple-800/50 rounded-lg cursor-pointer hover:bg-purple-700/50 transition">
-                                        <span>Beginner</span>
-                                    </div>
-                                </label>
-                                <label class="tech-level-option">
-                                    <input type="radio" name="tech-level" value="intermediate" class="sr-only">
-                                    <div
-                                        class="p-4 bg-purple-800/50 rounded-lg cursor-pointer hover:bg-purple-700/50 transition">
-                                        <span>Intermediate</span>
-                                    </div>
-                                </label>
-                                <label class="tech-level-option">
-                                    <input type="radio" name="tech-level" value="advanced" class="sr-only">
-                                    <div
-                                        class="p-4 bg-purple-800/50 rounded-lg cursor-pointer hover:bg-purple-700/50 transition">
-                                        <span>Advanced</span>
-                                    </div>
-                                </label>
-                            </div>
-                        </div>
-                    </section>
-
-                    <!-- Additional Comments -->
-                    <section class="space-y-4">
-                        <h3 class="text-xl font-semibold text-purple-200">Additional Comments</h3>
-                        <textarea
-                            class="w-full px-4 py-2 rounded-lg bg-purple-800/50 border border-purple-600 focus:outline-none focus:border-purple-400 text-purple-900"
-                            rows="4"
-                            placeholder="Share any additional thoughts about your career interests or goals"></textarea>
-                    </section>
-
-                    <div class="flex justify-end pt-6">
+                    <!-- Submit Button -->
+                    <div class="text-center pt-6">
                         <button type="submit"
-                            class="px-8 py-3 bg-purple-600 rounded-lg hover:bg-purple-700 transition text-white font-medium">
+                            class="px-8 py-3 bg-primary hover:bg-primary-dark text-white rounded-lg transition font-semibold">
                             Submit Assessment
                         </button>
                     </div>
@@ -290,7 +238,6 @@
             </div>
         </main>
     </div>
-
     <script src="assessment.js"></script>
 </body>
 

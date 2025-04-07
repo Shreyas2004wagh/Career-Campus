@@ -7,80 +7,112 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login - CareerCompass</title>
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #7E57C2;
+            --accent: #4DD0E1;
+            --background: #F5F5F5;
+            --text: #333333;
+        }
+        body {
+            background-color: var(--background);
+            color: var(--text);
+        }
+        .bg-primary {
+            background-color: var(--primary);
+        }
+        .bg-accent {
+            background-color: var(--accent);
+        }
+        .text-primary {
+            color: var(--primary);
+        }
+        .text-accent {
+            color: var(--accent);
+        }
+        .hover\:bg-primary-dark:hover {
+            background-color: #6A45B0;
+        }
+        .border-primary {
+            border-color: var(--primary);
+        }
+        .focus\:border-accent:focus {
+            border-color: var(--accent);
+        }
+    </style>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="auth.css">
 </head>
 
 <body>
-    <div
-        class="min-h-screen bg-gradient-to-br from-purple-900 via-purple-800 to-black text-white flex items-center justify-center">
-        <div class="w-full max-w-md p-6 bg-purple-900/30 rounded-xl backdrop-blur-sm">
+    <div class="min-h-screen bg-background flex items-center justify-center">
+        <div class="w-full max-w-md p-6 bg-white shadow-lg rounded-xl">
             <div class="text-center mb-8">
-                <h1 class="text-2xl font-bold mb-2">Welcome Back</h1>
-                <p class="text-purple-200">Sign in to continue your career journey</p>
+                <h1 class="text-2xl font-bold mb-2 text-primary">Welcome Back</h1>
+                <p class="text-text">Sign in to continue your career journey</p>
             </div>
 
             <form id="loginForm" class="space-y-4">
                 <div>
-                    <label for="email" class="block text-sm font-medium text-purple-200 mb-1">Email</label>
+                    <label for="email" class="block text-sm font-medium text-text mb-1">Email</label>
                     <input type="email" id="email"
-                        class="w-full px-4 py-2 rounded-lg bg-purple-800/50 border border-purple-600 focus:outline-none focus:border-purple-400 text-white"
+                        class="w-full px-4 py-2 rounded-lg bg-background border border-primary focus:outline-none focus:border-accent"
                         required />
                 </div>
 
                 <div>
-                    <label for="password" class="block text-sm font-medium text-purple-200 mb-1">Password</label>
+                    <label for="password" class="block text-sm font-medium text-text mb-1">Password</label>
                     <input type="password" id="password"
-                        class="w-full px-4 py-2 rounded-lg bg-purple-800/50 border border-purple-600 focus:outline-none focus:border-purple-400 text-white"
+                        class="w-full px-4 py-2 rounded-lg bg-background border border-primary focus:outline-none focus:border-accent"
                         required />
                 </div>
 
                 <div class="flex items-center justify-between text-sm">
                     <label class="flex items-center">
                         <input type="checkbox"
-                            class="form-checkbox bg-purple-800/50 border-purple-600 text-purple-600 rounded">
-                        <span class="ml-2 text-purple-200">Remember me</span>
+                            class="form-checkbox bg-background border-primary text-accent rounded">
+                        <span class="ml-2 text-text">Remember me</span>
                     </label>
-                    <a href="#" class="text-purple-300 hover:text-white transition">Forgot password?</a>
+                    <a href="#" class="text-primary hover:text-accent transition">Forgot password?</a>
                 </div>
 
                 <button type="submit"
-                    class="w-full bg-purple-600 hover:bg-purple-700 py-2 rounded-lg transition text-white font-medium">
+                    class="w-full bg-primary hover:bg-primary-dark py-2 rounded-lg transition text-white font-medium">
                     Sign In
                 </button>
             </form>
 
             <div class="mt-6 text-center text-sm">
-                <span class="text-purple-200">Don't have an account?</span>
-                <a href="signup.html" class="text-purple-300 hover:text-white transition ml-1">Sign up</a>
+                <span class="text-text">Don't have an account?</span>
+                <a href="signup.html" class="text-primary hover:text-accent transition ml-1">Sign up</a>
             </div>
 
             <div class="relative mt-6">
                 <div class="absolute inset-0 flex items-center">
-                    <div class="w-full border-t border-purple-600"></div>
+                    <div class="w-full border-t border-primary/30"></div>
                 </div>
                 <div class="relative flex justify-center text-sm">
-                    <span class="px-2 bg-purple-900/30 text-purple-200">Or continue with</span>
+                    <span class="px-2 bg-white text-text">Or continue with</span>
                 </div>
             </div>
 
             <div class="mt-6 grid grid-cols-3 gap-3">
                 <button
-                    class="flex justify-center items-center py-2 px-4 border border-purple-600 rounded-lg hover:bg-purple-800/40 transition">
+                    class="flex justify-center items-center py-2 px-4 border border-primary rounded-lg hover:bg-accent/10 transition text-primary">
                     <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                         <path
                             d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
                     </svg>
                 </button>
                 <button
-                    class="flex justify-center items-center py-2 px-4 border border-purple-600 rounded-lg hover:bg-purple-800/40 transition">
+                    class="flex justify-center items-center py-2 px-4 border border-primary rounded-lg hover:bg-accent/10 transition text-primary">
                     <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                         <path
                             d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
                     </svg>
                 </button>
                 <button
-                    class="flex justify-center items-center py-2 px-4 border border-purple-600 rounded-lg hover:bg-purple-800/40 transition">
+                    class="flex justify-center items-center py-2 px-4 border border-primary rounded-lg hover:bg-accent/10 transition text-primary">
                     <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                         <path
                             d="M12 0C5.372 0 0 5.373 0 12s5.372 12 12 12c6.627 0 12-5.373 12-12S18.627 0 12 0zm.14 19.018c-3.868 0-7-3.14-7-7.018 0-3.878 3.132-7.018 7-7.018 1.89 0 3.47.697 4.682 1.829l-1.974 1.978c-.532-.511-1.466-1.108-2.708-1.108-2.31 0-4.187 1.914-4.187 4.319 0 2.405 1.877 4.319 4.187 4.319 2.693 0 3.703-1.931 3.86-2.931H12v-2.591h6.79c.066.346.101.692.101 1.034.001 4.11-2.75 5.177-6.751 5.177z" />

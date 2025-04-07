@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Your Career Suggestions</title>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="results.css">
+</head>
+
+<body>
+    <div class="min-h-screen bg-gradient-to-br from-purple-900 via-purple-800 to-black text-white">
+        <header class="container mx-auto px-4 py-4 md:py-8">
+            <nav class="flex justify-between items-center">
+                <h1 class="text-xl md:text-2xl font-bold">CareerCompass</h1>
+                <div class="flex items-center space-x-4">
+                    <a href="index.html" class="text-purple-200 hover:text-white transition">Back to Home</a>
+                </div>
+            </nav>
+        </header>
+
+        <main class="container mx-auto px-4 py-8">
+            <div class="max-w-3xl mx-auto">
+                <div class="text-center mb-8">
+                    <h2 class="text-2xl md:text-3xl font-bold mb-4">Your Top Career Matches</h2>
+                    <p class="text-purple-200">Based on your assessment, here are your personalized career
+                        recommendations</p>
+                </div>
+
+                <div id="results" class="space-y-4"></div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        const resultDiv = document.getElementById('results');
+        const matches = JSON.parse(localStorage.getItem("careerMatches") || "[]");
+
+        if (matches.length === 0) {
+            resultDiv.innerHTML = `
+          <div class="bg-purple-900/30 p-6 rounded-xl backdrop-blur-sm text-center">
+            <p class="text-purple-200">No matches found. Try submitting the form again.</p>
+            <a href="assessment.html" class="inline-block mt-4 px-6 py-2 bg-purple-600 rounded-lg hover:bg-purple-700 transition">
+              Take Assessment
+            </a>
+          </div>
+        `;
+        } else {
+            matches.forEach(career => {
+                const card = document.createElement('div');
+                card.className = 'bg-purple-900/30 p-6 rounded-xl backdrop-blur-sm';
+                card.innerHTML = `
+              <h2 class="text-xl font-semibold">${career.title}</h2>
+            `;
+                resultDiv.appendChild(card);
+            });
+        }
+    </script>
+</body>
+
+</html>
